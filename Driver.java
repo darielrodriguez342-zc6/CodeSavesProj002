@@ -39,7 +39,7 @@ public class Driver{
        System.out.println("Welcome to the Library Management System\n");
 
        //Loop to allow multiple commands
-       while(done == true) {
+       while(done = true) {
           System.out.print("Input command:");
 
           command = scnr.nextLine();
@@ -72,7 +72,7 @@ public class Driver{
              break;
           }
           //Load command
-          if (command.equals("load")) {
+          else if (command.equals("load")) {
                System.out.println("Input text file location.");
                //Input location of file within computer
                fileName = scnr.nextLine();
@@ -82,9 +82,11 @@ public class Driver{
                        patrons.put(patron.getID(), patron);
                    }
                    System.out.println(patrons);
-               } catch (IOException e) {
+               } catch (Exception e) {
                    throw new RuntimeException(e);
                }
+
+
            }
        }
     }
@@ -106,12 +108,12 @@ public class Driver{
         double ovRep=0;
         i++;
 
-        while(mvOn == true){
+        while(mvOn = true){
             //Input for id (limit to 7 digits)
             //Loop to try new id
             System.out.println("Type new 7 digit ID");
             try {
-                while(mvOn == true){
+                while(mvOn = true){
                     ID = scnr.nextLine();
                     if(ID.matches("[0-9]{7}")){break;}
                     else{System.out.println("Please Input up to a 7 digit value");}}
@@ -133,7 +135,7 @@ public class Driver{
         
         //Overdue amount for new patron
         //limited to less than 250
-        while(mvOn == true) {
+        while(mvOn = true) {
             try {
                 System.out.println("Type amount owed");
                 overdue = scnr.nextLine();
